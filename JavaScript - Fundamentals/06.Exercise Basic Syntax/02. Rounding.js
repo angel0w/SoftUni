@@ -1,6 +1,6 @@
 function rounding (rounded, precision) {
 
-        if ( precision <= 15) {
+        if ( precision >= 15) {
             console.log(parseFloat(rounded.toFixed(15)));
         } else {
             console.log(parseFloat(rounded.toFixed(precision)))
