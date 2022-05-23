@@ -4,7 +4,10 @@ function reverseString(str) {
     newString += str[i];
   }
   console.log(newString);
+
+  // let newStr = str.split("").reverse().join("");
+  // console.log(newStr);
 }
-// reverseString('Hello');
-// reverseString(SoftUni);
-reverseString(1234);
+reverseString("Hello");
+reverseString("SoftUni");
+reverseString("1234");
