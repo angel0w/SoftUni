@@ -9,5 +9,5 @@ function nextDay(year, month, day) {
   //   console.log(newMonth);
   //   console.log(newDate);
 }
-nextDay(2016, 9, 30);
-// nextDay(2020, 3, 24);
+// nextDay(2016, 9, 30);
+nextDay(2020, 3, 24);
