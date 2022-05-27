@@ -1,0 +1,4 @@
+function primeNumberChecker (number) {
+     
+}
+primeNumberChecker();
