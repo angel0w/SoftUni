@@ -1,0 +1,4 @@
+function equalArrays (params) {
+    
+}
+equalArrays();
