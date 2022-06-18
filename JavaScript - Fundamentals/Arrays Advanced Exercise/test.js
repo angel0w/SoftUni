@@ -59,11 +59,17 @@
  // [[[[[[[[~~~SORT>()~~~]]]]]]]
  function arraysAdvanced() {
 
-   //сортиране на стринг
-    let arr = ['bbbb', 'aaaaaa', 'ccc'];
+    //сортиране по азбучен ред
+    let arr = ['bbbb', 'aa', 'ccc'];
     let sortedArray = arr.sort(function(a,b){
-        return b.length - a.length //от по-голямото към по-малкото;
+        return a.localeCompare(b) //от по-голямото към по-малкото;
     });
+
+   //сортиране на стринг
+    // let arr = ['bbbb', 'aaaaaa', 'ccc'];
+    // let sortedArray = arr.sort(function(a,b){
+    //     return a.length - b.length //от по-голямото към по-малкото;
+    // });
 
 //сортиране на числа
     // let arr = [5, 1, 11, 3,100];

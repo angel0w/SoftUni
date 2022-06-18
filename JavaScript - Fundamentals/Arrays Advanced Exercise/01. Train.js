@@ -6,9 +6,8 @@ function train(arr) {
   for (let i = 0; i < arr.length; i++) {
     let commandNum = arr[i].split(" ");
 
-    if (commandNum === 'Add') {
+    if (commandNum[0] === 'Add') {
       passengersInTrainArr.push(Number(commandNum[1]));
-      console.log(commandNum);
     } else {
       for (let a = 0; a < passengersInTrainArr.length; a++) {
         if (Number(commandNum[0]) + passengersInTrainArr[a] <= maxCapacity) {
