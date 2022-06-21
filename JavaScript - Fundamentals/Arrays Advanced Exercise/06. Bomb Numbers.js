@@ -1,17 +1,19 @@
 function bombNumbers(sequenceNums, bombWithPower) {
-  let bombNum = bombWithPower[0];
-  let certainPowerNums = bombWithPower[1];
-  let sum = 0;
+  let bomb = Number(bombWithPower[0]);
+  let range = Number(bombWithPower[1]);
 
-  for (let i = 0; i < sequenceNums.length; i++) {
-    if (sequenceNums.includes(bombNum)) {
-      let index = sequenceNums.indexOf(bombNum);
-      sequenceNums.splice(index - certainPowerNums, certainPowerNums * 2 + 1);
-        
+  while (sequenceNums.includes(bomb)) {
+    let index = sequenceNums.indexOf(bomb);
+    let elementsToRemove = range * 2 + 1;
+    let startIndex = index - range;
+
+    if (startIndex < 0) {
+      elementsToRemove += startIndex;
+      startIndex = 0;
     }
-    sum += Number(sequenceNums[i]);
+    sequenceNums.splice(startIndex, elementsToRemove);
   }
-  console.log(sum);
+  console.log(sequenceNums.reduce((a, partial) => a + partial, 0));
 }
 bombNumbers([1, 2, 2, 4, 2, 2, 2, 9], [4, 2]);
 bombNumbers([1, 4, 4, 2, 8, 9, 1], [9, 3]);

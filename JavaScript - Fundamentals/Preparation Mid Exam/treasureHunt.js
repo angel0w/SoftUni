@@ -1,7 +1,7 @@
 function treasureHunt(data) {
   let state = data.shift().split("|");
-
   let index = 0;
+
   let command = data[index];
   index++;
   let i;
@@ -17,16 +17,18 @@ function treasureHunt(data) {
           }
         }
         break;
+
       case "Drop":
-        i = Number(tokens[0]);
-        if (i < 0 || i > state.length) {
+        let i = Number(tokens[0]);
+        if (i < 0 || i >= state.length) {
           command = data[index];
           index++;
           continue;
         }
         let element = state.splice(i, 1);
-        state.push(element[0]);
+        state.push(element, [0]);
         break;
+
       case "Steal":
         let count = Number(tokens[0]);
         let items = state.splice(-count);
@@ -36,28 +38,26 @@ function treasureHunt(data) {
     command = data[index];
     index++;
   }
-
+  let sum = 0;
+  for (let el of state) {
+    sum += el.length;
+  }
   if (state.length > 0) {
-    let sum = 0;
-    for (let el of state) {
-      sum += el.length;
-    }
     let avg = sum / state.length;
     console.log(`Average treasure gain: ${avg.toFixed(2)} pirate credits.`);
   } else {
     console.log("Failed treasure hunt.");
   }
 }
-
-// treasureHunt([
-//   "Gold|Silver|Bronze|Medallion|Cup",
-//   "Loot Wood Gold Coins",
-//   "Loot Silver Pistol",
-//   "Drop 3",
-//   "Steal 3",
-//   "Yohoho!",
-// ]);
-
+treasureHunt([
+  "Gold|Silver|Bronze|Medallion|Cup",
+  "Loot Wood Gold Coins",
+  "Loot Silver Pistol",
+  "Drop 3",
+  "Steal 3",
+  "Yohoho!",
+]);
+console.log("-------------");
 treasureHunt([
   "Diamonds|Silver|Shotgun|Gold",
   "Loot Silver Medals Coal",
