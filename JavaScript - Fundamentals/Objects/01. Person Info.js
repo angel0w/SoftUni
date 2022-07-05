@@ -1,9 +1,19 @@
-function personInfo(firstName,lastName,age) {
+function personInfo (firstName, lastName, age) {
+    
+    let person = {};
 
-    let res = {}
-    res.firstName = firstName;
-    res.lastName = lastName;
-    res.age = age
-    return res
+    person.firstName = firstName;
+    person.lastName = lastName;
+    person.age = age
+    
+    return person;
+
 }
-console.log(personInfo('Peter','Pan','20')); 
+personInfo("Peter", 
+"Pan",
+"20"
+);
+personInfo("George", 
+"Smith",
+"18"
+);
