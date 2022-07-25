@@ -4,13 +4,15 @@ function AMinerTask (input) {
     
     for (let i = 0; i < inputL; i+=2) {
         let resources = input[i];
+        let quantity = +input[i + 1];
+        
         if (collectedResources.hasOwnProperty(resources)) {
             let oldValue =  +collectedResources[resources];
-            collectedResources[resources] = +input[i + 1] + oldValue;
+            collectedResources[resources] = quantity + oldValue;
             continue;
 
         }
-        collectedResources[resources] = Number(input[i + 1]);
+        collectedResources[resources] = quantity;
     }
 
     for (let el in collectedResources) {
