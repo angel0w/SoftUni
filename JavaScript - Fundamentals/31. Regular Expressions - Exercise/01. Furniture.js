@@ -2,8 +2,8 @@ function furniture (input) {
 
     let totalSum = 0;
     console.log('Bought furniture:');
-    for (let el of input) {
 
+    for (let el of input) {
         if ( el === 'Purchase') {
             break;
         }
@@ -11,10 +11,10 @@ function furniture (input) {
         // let regex = />>(?<furniture>[A-Za-z]+)<<(?<price>\d+(.\d+)?)!(?<countity>\d+)/gm;
         let regex = />>(?<furniture>[A-Za-z]+)<<(?<price>\d+([.]?\d+)?)!(?<countity>\d+)/gm
         let match = regex.exec(el);
+
         if (match) {
             totalSum += +match.groups.price * +match.groups.countity;
             console.log(`${match.groups.furniture}`);
-
         }
     }
     console.log(`Total money spend: ${totalSum.toFixed(2)}`);
