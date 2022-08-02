@@ -41,7 +41,11 @@ function worldTour(input) {
 
             // Switch:Hawai:Bulgaria
 
-            stops = stops.replace(com1, com2);
+            // 1st method
+            stops = stops.split(com1).join(com2);
+            
+            // 2nd method who change only first el
+            // stops = stops.replace(com1, com2);
             console.log(stops);
         }
 
