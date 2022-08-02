@@ -24,9 +24,9 @@ function worldTour(input) {
             // (inclusive) if both indices are valid
 
             // Remove Stop:11:16
-            
+
             // проверка дали индекса е валиден
-            if (stops[com1] && stops[com2]) {
+            if (stops[startIndex] && stops[endIndex]) {
                 let subStr = stops.substring(startIndex, endIndex + 1);
                 stops = stops.replace(subStr, "");
             }
