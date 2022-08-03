@@ -6,10 +6,12 @@ function plantDiscovery (input) {
     for (let i = 0; i < n; i++) {
 
         let [plant, rarity] = input.shift().split("<->");
-
+        rarity = Number(rarity);
         if (!store.hasOwnProperty(plant)) {
-            store[plant] = { rarity: Number(rarity) , rating: []};
+            store[plant] = { rarity: rarity , rating: []};
 
+        } else {
+            store[plant]['rarity'] = rarity;
         }
 
     }
@@ -18,7 +20,9 @@ function plantDiscovery (input) {
     while (line !== 'Exhibition') {
         let [command, tokens] = line.split(": ");
         let [plants, raritys] = tokens.split(" - ");
-        
+
+
+        raritys = Number(raritys);
         if (command === 'Exhibition') {
             break;
         }
@@ -26,13 +30,15 @@ function plantDiscovery (input) {
         if (command === 'Rate') {
             // "Rate: {plant} - {rating}" – 
             // add the given rating to the plant (store all ratings);
-            store[plants]['rating'].push(Number(raritys));
+            if (store.hasOwnProperty(plants)) {
+                store[plants]['rating'].push(raritys);
+            }
             
         } else if (command === 'Update') {
             // Update: {plant} - {new_rarity}" – 
             // update the rarity of the plant with the new one
 
-            store[plants]['rarity'] = Number(raritys);
+            store[plants]['rarity'] = raritys;
 
         } else if (command === 'Reset') {
             // "Reset: {plant}" – remove all the ratings of the given plant;
