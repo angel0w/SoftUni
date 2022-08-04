@@ -32,21 +32,27 @@ function plantDiscovery (input) {
             // add the given rating to the plant (store all ratings);
             if (store.hasOwnProperty(plants)) {
                 store[plants]['rating'].push(raritys);
+            } else {
+                console.log('error');
             }
             
         } else if (command === 'Update') {
             // Update: {plant} - {new_rarity}" – 
             // update the rarity of the plant with the new one
-
-            store[plants]['rarity'] = raritys;
+            if (store.hasOwnProperty(plants)) {
+                store[plants]['rarity'] = raritys;
+            } else {
+                console.log('error');
+            }
 
         } else if (command === 'Reset') {
             // "Reset: {plant}" – remove all the ratings of the given plant;
+            if (store.hasOwnProperty(plants)) {
+                store[plants]['rating'] = [];
+            } else {
+                console.log('error');
+            }
 
-            store[plants]['rating'] = [];
-
-        } else {
-            console.log('error');
         }
 
     line = input.shift();
