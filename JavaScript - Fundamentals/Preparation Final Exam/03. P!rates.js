@@ -46,16 +46,16 @@ function pirastes (data) {
 
         line = data.shift();
     }
+
     let townKeys = Object.keys(store);
-
-    console.log(`Ahoy, Captain! There are ${townKeys.length} wealthy settlements to go to:`);
-
-    for (const city of townKeys) {
-        console.log(`${city} -> Population: ${store[city]['populations']} citizens, Gold: ${store[city]['golds']} kg`);
-
-
+    if (townKeys.length > 0) {
+        console.log(`Ahoy, Captain! There are ${townKeys.length} wealthy settlements to go to:`);
+        for (const city of townKeys) {
+            console.log(`${city} -> Population: ${store[city]['populations']} citizens, Gold: ${store[city]['golds']} kg`);
+        }
+    } else {
+        console.log(`Ahoy, Captain! All targets have been plundered and destroyed!`);
     }
-
 }
 pirastes(["Tortuga||345000||1250",
 "Santo Domingo||240000||630",
