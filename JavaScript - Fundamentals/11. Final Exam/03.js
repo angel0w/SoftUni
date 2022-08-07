@@ -33,9 +33,6 @@ function dictionary(data) {
             console.log(words.join(" "));
 
         }
-
-    
-        
     }
 }
 dictionary([
