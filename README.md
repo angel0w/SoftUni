@@ -1,2 +1,2 @@
-# SoftUni_JS_Fundamentals-May2022
-Solutions of Softuni-JS Fundamentals problems
+<h1>🎓 SoftUni problems</h1>
+<p>📚 Exercise and homeworks with JavaScript </p>
