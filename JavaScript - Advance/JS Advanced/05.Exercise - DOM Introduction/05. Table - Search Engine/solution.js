@@ -21,7 +21,7 @@ function solve() {
             }
         });
 
-        input = '';
+        input.value = '';
     }
 
     // let input = document.getElementById('searchField');
