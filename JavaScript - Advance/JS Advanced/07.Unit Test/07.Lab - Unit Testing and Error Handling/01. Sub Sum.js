@@ -3,6 +3,7 @@ function solve(numbers, start, end) {
         return NaN;
     }
 
+    
     let startIndex = Math.max(start, 0);
     let endIndex = Math.min(end,numbers.length - 1);
 
