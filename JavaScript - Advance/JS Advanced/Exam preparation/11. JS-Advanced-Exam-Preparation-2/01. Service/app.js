@@ -72,5 +72,3 @@ function solve() {
         divCont.forEach(div => div.remove());
     }
 }
-
-//  1:00
