@@ -136,3 +136,15 @@ let sumNums = nums.reduce((acc, number) => {
     return acc + number;
 }, 0)
 console.log(sumNums);
+
+//
+function nameArr(params) {
+    let arr = [1,2,3,4];
+
+    let newArr = arr.map(function(el) {
+        return el+5
+    });
+
+    console.log(newArr);
+}
+nameArr()
