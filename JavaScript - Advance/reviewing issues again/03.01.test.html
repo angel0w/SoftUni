@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello, World</h1>
+    <ul>
+        <li>BMW</li>
+        <li>Audi</li>
+        <li id="mercCar">Mercedes</li>
+    </ul>
+    <button onclick="OnBtnClick()">Send</button>
+    <button onclick="oBtn()">Second</button>
+    <button onclick="thirdCars()">Third</button>
+
+    <script>
+
+        function OnBtnClick() {
+            let title = document.getElementById('heading');
+            title.textContent = "Hello, All"
+        }
+
+        function thirdCars() {
+            let thirdCar = document.getElementById('mercCar')
+            thirdCar.textContent = 'Honda'
+        }
+    </script>
+</body>
+</html>
